@@ -2,10 +2,10 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { verifySource } from './verify-downloads.mjs';
 
-const source = 'https://github.com/lavapapa/open-richo-monitor';
+const source = 'https://github.com/lavapapa/open-ricoh-monitor';
 const version = '1.2.3';
 function manifest() {
-  return { version, platforms: Object.fromEntries(Object.entries({ 'darwin-aarch64': 'aarch64.app.tar.gz', 'darwin-x86_64': 'x64.app.tar.gz', 'windows-x86_64': 'x64-setup.exe' }).map(([key, suffix]) => [key, { url: `${source}/releases/download/v${version}/RichoMonitor_${version}_${suffix}`, signature: 'fixture' }])) };
+  return { version, platforms: Object.fromEntries(Object.entries({ 'darwin-aarch64': 'aarch64.app.tar.gz', 'darwin-x86_64': 'x64.app.tar.gz', 'windows-x86_64': 'x64-setup.exe' }).map(([key, suffix]) => [key, { url: `${source}/releases/download/v${version}/RicohMonitor_${version}_${suffix}`, signature: 'fixture' }])) };
 }
 test('公开检查逐一检查三平台安装与更新地址，拒绝缺失或 HTML 登录页', async () => {
   const requests = [];
@@ -44,5 +44,17 @@ test('网络异常保留实际请求方法、地址和原因', async () => {
   await assert.rejects(verifySource(source, async (_url, options) => {
     if (options.method === 'GET') return new Response(JSON.stringify(manifest()));
     throw new Error('connection closed');
-  }), /HEAD https:\/\/github\.com\/lavapapa\/open-richo-monitor\/releases\/download\/v1\.2\.3\/RichoMonitor_1\.2\.3_.*：connection closed/);
+  }), /HEAD https:\/\/github\.com\/lavapapa\/open-ricoh-monitor\/releases\/download\/v1\.2\.3\/RicohMonitor_1\.2\.3_.*：connection closed/);
+});
+test('公开文件名由发行清单决定，各平台保持同一产品前缀', async () => {
+  const content = JSON.parse(JSON.stringify(manifest()).replaceAll('RicohMonitor_', 'PublishedMonitor_'));
+  const urls = [];
+  const fetcher = async (url, options) => {
+    urls.push(url);
+    return options.method === 'GET' ? new Response(JSON.stringify(content)) : new Response(null);
+  };
+  assert.deepEqual(await verifySource(source, fetcher), { source, version, files: 5 });
+  assert(urls.includes(`${source}/releases/download/v${version}/PublishedMonitor_${version}_x64.dmg`));
+  content.platforms['darwin-x86_64'].url = content.platforms['darwin-x86_64'].url.replace('PublishedMonitor_', 'OtherMonitor_');
+  await assert.rejects(verifySource(source, fetcher), /文件名不同/);
 });

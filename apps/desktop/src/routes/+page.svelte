@@ -1137,7 +1137,7 @@
     <UpdateNotice mode="sidebar" status={updateStatus} checked={updateChecked} onCheck={checkUpdates} onInstall={installUpdate} onAutoChange={changeAutoUpdate} />
     <div class="sidebar-state">
       {#if snapshot?.runtime}<span><i class:running={snapshot.runtime.state === "monitoring"}></i>{snapshot.runtime.state === "outside_schedule" ? "等待" : runtimeLabel(snapshot.runtime.state)}</span>{/if}
-      <a class="icon-button github-link" href="https://github.com/lavapapa/open-richo-monitor" target="_blank" rel="noreferrer" aria-label="项目主页" title="项目主页" on:click={(event) => { if (!desktopApi.previewMode) { event.preventDefault(); void run(() => desktopApi.openExternalUrl("https://github.com/lavapapa/open-richo-monitor")); } }}><span aria-hidden="true"></span></a>
+      <a class="icon-button github-link" href="https://github.com/lavapapa/open-ricoh-monitor" target="_blank" rel="noreferrer" aria-label="项目主页" title="项目主页" on:click={(event) => { if (!desktopApi.previewMode) { event.preventDefault(); void run(() => desktopApi.openExternalUrl("https://github.com/lavapapa/open-ricoh-monitor")); } }}><span aria-hidden="true"></span></a>
       <button class="icon-button theme-switch" aria-label={`外观：${theme === "system" ? "跟随系统" : theme === "light" ? "浅色" : "深色"}`} title={`外观：${theme === "system" ? "跟随系统；切换为浅色" : theme === "light" ? "浅色；切换为深色" : "深色；切换为跟随系统"}`} on:click={() => changeTheme(theme === "system" ? "light" : theme === "light" ? "dark" : "system")}>
         {#if theme === "system"}<Monitor size={15} />{:else if theme === "light"}<Sun size={15} />{:else}<Moon size={15} />{/if}
       </button>

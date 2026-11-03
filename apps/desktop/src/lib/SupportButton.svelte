@@ -11,9 +11,9 @@
 </script>
 
 <div class="support">
-  <p class="caption">RichoMonitor 是一个完全开源免费的软件，如果帮到了你，欢迎 star/打赏！</p>
+  <p class="caption">RicohMonitor 是一个完全开源免费的软件，如果帮到了你，欢迎 star/打赏！</p>
   <div class="actions">
-    <button class="star-button" on:click={() => open("https://github.com/lavapapa/open-richo-monitor")}><Star size={17} aria-hidden="true" />GitHub Star</button>
+    <button class="star-button" on:click={() => open("https://github.com/lavapapa/open-ricoh-monitor")}><Star size={17} aria-hidden="true" />GitHub Star</button>
     {#if url}<button class="support-button" on:click={() => url && open(url)}><Coffee size={18} aria-hidden="true" />打赏作者</button>{/if}
   </div>
   {#if error}<p role="alert">{error}</p>{/if}

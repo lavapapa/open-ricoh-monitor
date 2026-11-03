@@ -84,7 +84,7 @@ pub(crate) async fn permission_state(app: &AppHandle) -> Result<PermissionState,
         .config()
         .product_name
         .clone()
-        .unwrap_or_else(|| "RichoMonitor".into());
+        .unwrap_or_else(|| "RicohMonitor".into());
     tauri::async_runtime::spawn_blocking(move || {
         let setting = windows_notifier(&app_id, tauri::is_dev(), &display_name)
             .and_then(|notifier| windows_notification_setting(&notifier, &app_id, tauri::is_dev()))
@@ -184,7 +184,7 @@ fn windows_notifier(
         key.set_string("CustomActivator", "{DCBCE77E-8D71-4EF1-BF02-3B46C923DA47}")?;
         let protocol =
             windows_registry::CURRENT_USER.create(format!(r"Software\Classes\{app_id}"))?;
-        protocol.set_string("", "URL:RichoMonitor")?;
+        protocol.set_string("", "URL:RicohMonitor")?;
         protocol.set_string("URL Protocol", "")?;
         protocol.create(r"shell\open\command")?.set_string(
             "",
@@ -215,7 +215,7 @@ fn windows_notification_setting(
     match notifier.Setting() {
         // 首次投递前 Win32 应用尚无通知平台记录；按微软 Toolkit 的方式无横幅初始化。
         Err(error) if error.code() == HRESULT(0x80070490u32 as i32) => {
-            let document = windows_toast_document("RichoMonitor", "通知初始化", app_id, is_dev)?;
+            let document = windows_toast_document("RicohMonitor", "通知初始化", app_id, is_dev)?;
             let notification = ToastNotification::CreateToastNotification(&document)?;
             notification.SetSuppressPopup(true)?;
             notification.SetTag(h!("initialize"))?;
@@ -326,7 +326,7 @@ async fn send_windows(app: &AppHandle, title: &'static str, body: String) -> Res
         .config()
         .product_name
         .clone()
-        .unwrap_or_else(|| "RichoMonitor".into());
+        .unwrap_or_else(|| "RicohMonitor".into());
     tauri::async_runtime::spawn_blocking(move || {
         let notifier = windows_notifier(&app_id, tauri::is_dev(), &display_name)
             .map_err(|error| format!("Windows 通知连接失败，请重新发送：{error}"))?;
@@ -421,7 +421,7 @@ mod tests {
                         let notifier = super::windows_notifier(
                             &app_id,
                             false,
-                            "RichoMonitor notification test",
+                            "RicohMonitor notification test",
                         )
                         .unwrap();
                         super::windows_notification_setting(&notifier, &app_id, false).unwrap()
@@ -458,10 +458,10 @@ mod tests {
         let app_id = format!("dev.ricohmonitor.notification-test.{}", std::process::id());
         let path = format!(r"Software\Classes\AppUserModelId\{app_id}");
         let notifier =
-            super::windows_notifier(&app_id, false, "RichoMonitor notification test").unwrap();
+            super::windows_notifier(&app_id, false, "RicohMonitor notification test").unwrap();
         let result = (|| {
             let key = windows_registry::CURRENT_USER.open(&path)?;
-            assert_eq!(key.get_string("DisplayName")?, "RichoMonitor notification test");
+            assert_eq!(key.get_string("DisplayName")?, "RicohMonitor notification test");
             super::windows_permission_from_setting(super::windows_notification_setting(
                 &notifier, &app_id, false,
             )?)
@@ -570,14 +570,14 @@ pub(crate) async fn request_permission(app: &AppHandle) -> Result<PermissionStat
 
 #[cfg(target_os = "windows")]
 pub(crate) async fn show(app: &AppHandle, event: &RecentEvent) -> Result<(), String> {
-    send_windows(app, "RichoMonitor", event.message.clone()).await
+    send_windows(app, "RicohMonitor", event.message.clone()).await
 }
 
 #[cfg(not(any(target_os = "macos", target_os = "windows")))]
 pub(crate) async fn show(app: &AppHandle, event: &RecentEvent) -> Result<(), String> {
     app.notification()
         .builder()
-        .title("RichoMonitor")
+        .title("RicohMonitor")
         .body(&event.message)
         .show()
         .map_err(|error| error.to_string())
@@ -587,7 +587,7 @@ pub(crate) async fn show(app: &AppHandle, event: &RecentEvent) -> Result<(), Str
 pub(crate) async fn show_test(app: &AppHandle, message: String) -> Result<(), String> {
     send_windows(
         app,
-        "RichoMonitor · 测试消息",
+        "RicohMonitor · 测试消息",
         message,
     )
     .await
@@ -597,7 +597,7 @@ pub(crate) async fn show_test(app: &AppHandle, message: String) -> Result<(), St
 pub(crate) async fn show_test(app: &AppHandle, message: String) -> Result<(), String> {
     app.notification()
         .builder()
-        .title("RichoMonitor · 测试消息")
+        .title("RicohMonitor · 测试消息")
         .body(&message)
         .show()
         .map_err(|error| error.to_string())
@@ -653,13 +653,13 @@ async fn send(title: &'static str, body: String) -> Result<(), String> {
 
 #[cfg(target_os = "macos")]
 pub(crate) async fn show(_app: &AppHandle, event: &RecentEvent) -> Result<(), String> {
-    send("RichoMonitor", event.message.clone()).await
+    send("RicohMonitor", event.message.clone()).await
 }
 
 #[cfg(target_os = "macos")]
 pub(crate) async fn show_test(_app: &AppHandle, message: String) -> Result<(), String> {
     send(
-        "RichoMonitor · 测试消息",
+        "RicohMonitor · 测试消息",
         message,
     )
     .await

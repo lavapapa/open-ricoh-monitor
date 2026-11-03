@@ -108,7 +108,7 @@ fn install_tray(app: &tauri::App) -> tauri::Result<()> {
     TrayIconBuilder::with_id("ricoh-monitor")
         .icon(icon)
         .icon_as_template(cfg!(target_os = "macos"))
-        .tooltip("RichoMonitor")
+        .tooltip("RicohMonitor")
         .menu(&menu)
         .show_menu_on_left_click(true)
         .on_menu_event(|app, event| match event.id().as_ref() {
@@ -439,7 +439,7 @@ pub fn run() {
             Ok(())
         })
         .build(context)
-        .expect("failed to build RichoMonitor app");
+        .expect("failed to build RicohMonitor app");
 
     app.run(|app, event| {
         #[cfg(target_os = "macos")]

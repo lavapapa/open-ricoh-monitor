@@ -1,7 +1,7 @@
 通知运行时源码与重新构建
 
 对应源码与重建资料的独立可选下载：
-https://github.com/lavapapa/open-richo-monitor/releases/download/bun-v1.4.2-source/bun-v1.4.2-third-party-source.zip
+https://github.com/lavapapa/open-ricoh-monitor/releases/download/bun-v1.4.2-source/bun-v1.4.2-third-party-source.zip
 备用下载：
 https://pan.quark.cn/s/23680e3a57e0
 其中的 bun-v1.4.2-third-party-source.zip 包含 Bun、其锁定的

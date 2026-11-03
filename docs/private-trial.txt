@@ -1,10 +1,10 @@
-RichoMonitor 安装说明
+RicohMonitor 安装说明
 
 Mac 安装
 
 Mac 需要 macOS 13 或更新系统。Apple Silicon 选择 aarch64.dmg，
 Intel Mac 选择 x64.dmg；请下载与电脑处理器对应的安装包。
-打开 DMG，将 RichoMonitor 拖入 Applications（应用程序），
+打开 DMG，将 RicohMonitor 拖入 Applications（应用程序），
 弹出磁盘映像，再从应用程序打开。
 
 Mac 安装包采用临时签名，尚未经过 Developer ID 签名与 Apple 公证。
@@ -46,5 +46,5 @@ Windows 安装
 许可文本、Bun 对应源码地址和重新构建说明。平台图标用于识别通知渠道，
 各平台品牌标识仍归原权利人所有；本应用与理光官方无隶属关系。
 Bun 及其 LGPL 组件的对应源码和重建资料提供独立可选下载：
-https://github.com/lavapapa/open-richo-monitor/releases/tag/bun-v1.4.2-source
+https://github.com/lavapapa/open-ricoh-monitor/releases/tag/bun-v1.4.2-source
 安装本应用无需下载这份第三方资料。

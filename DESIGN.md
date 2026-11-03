@@ -1,12 +1,12 @@
 # 设计规范
 
-open-richo-monitor 是本地运行的库存提醒工具。界面让用户快速判断运行状态、最近检查结果与下一步操作；视觉服务于这些信息，保持接近 macOS 工具应用的清晰与克制。
+open-ricoh-monitor 是本地运行的库存提醒工具。界面让用户快速判断运行状态、最近检查结果与下一步操作；视觉服务于这些信息，保持接近 macOS 工具应用的清晰与克制。
 
 ## 一、视觉
 
 界面提供浅色、深色、跟随系统三种外观，默认跟随系统。浅色主内容区使用白色，商品图融入画布；深色使用深炭色画布，白底商品图放在统一的低亮度灰色底座上，通过正片叠底降低白底的亮度，原图文件保持完整。具体颜色以 [`theme.css`](apps/desktop/src/lib/theme.css) 的语义变量为准。绿色表示有货及正常运行，错误信息和危险操作使用各主题的警告红色；表单和系统控件沿用对应的 color-scheme，常态边框使用半透明颜色。
 
-侧栏顶部使用独立的红色 RM 字标，下方显示 RichoMonitor 名称。商品图等比展示、保持完整。素材来源见 [`sources.json`](apps/desktop/static/brand/sources.json)。
+侧栏顶部使用独立的红色 RM 字标，下方显示 RicohMonitor 名称。商品图等比展示、保持完整。素材来源见 [`sources.json`](apps/desktop/static/brand/sources.json)。
 
 ## 二、界面
 

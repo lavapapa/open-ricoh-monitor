@@ -31,7 +31,7 @@
   <div class="content">
     {#if item.id === "configuration"}
       <figure role="img" aria-label="取消 GR IV 提醒的通知示例">
-        <div class="notification-header"><img src="/brand/rm-wordmark.svg" alt="" /><strong>RichoMonitor</strong></div>
+        <div class="notification-header"><img src="/brand/rm-wordmark.svg" alt="" /><strong>RicohMonitor</strong></div>
         <div class="notification-body"><strong>监控产品变更：减少【RICOH GR IV】</strong><span>当前监控范围：官翻品 RICOH GR III、官翻品 GR IIIx、RICOH GR III Diary Edition 日记版、RICOH GR IIIx Urban Edition 都市版、官翻品 RICOH GR III HDF、官翻品 GR IIIx HDF、官翻品 GR IV HDF</span><time>2026-10-13 09:42:16.028</time></div>
       </figure>
       <p>调整商品、计划或检查间隔后，向现有通知渠道发送变更提醒。</p>

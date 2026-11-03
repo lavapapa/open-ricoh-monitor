@@ -1,6 +1,6 @@
 <div align="center">
 
-# RichoMonitor
+# RicohMonitor
 
 **让人人都有自己的理光商城监控**
 
@@ -8,12 +8,12 @@
 
 [![MIT License](https://img.shields.io/badge/License-MIT-c82036?style=flat-square)](LICENSE)
 [![Desktop](https://img.shields.io/badge/Desktop-macOS%20%7C%20Windows-24292f?style=flat-square)](#一下载)
-[![GitHub Release](https://img.shields.io/github/v/release/lavapapa/open-richo-monitor?style=flat-square&color=c82036&label=Download)](https://github.com/lavapapa/open-richo-monitor/releases/latest)
-[![Quick checks](https://github.com/lavapapa/open-richo-monitor/actions/workflows/checks.yml/badge.svg)](https://github.com/lavapapa/open-richo-monitor/actions/workflows/checks.yml)
+[![GitHub Release](https://img.shields.io/github/v/release/lavapapa/open-ricoh-monitor?style=flat-square&color=c82036&label=Download)](https://github.com/lavapapa/open-ricoh-monitor/releases/latest)
+[![Quick checks](https://github.com/lavapapa/open-ricoh-monitor/actions/workflows/checks.yml/badge.svg)](https://github.com/lavapapa/open-ricoh-monitor/actions/workflows/checks.yml)
 
 [下载](#一下载) · [上手](#二上手) · [功能](#三功能) · [开发](#四开发) · [打赏作者](#五支持)
 
-![RichoMonitor：让人人都有自己的理光商城监控](docs/images/hero.png)
+![RicohMonitor：让人人都有自己的理光商城监控](docs/images/hero.png)
 
 </div>
 
@@ -26,9 +26,9 @@
 <!-- downloads:start -->
 | 你的电脑 | 点击下载 | 国内镜像 |
 | --- | --- | --- |
-| Mac · Apple Silicon（M1、M2、M3、M4 等） | [下载 Mac Apple Silicon 版](https://github.com/lavapapa/open-richo-monitor/releases/download/v0.1.7/RichoMonitor_0.1.7_aarch64.dmg) | [Gitee 下载](https://gitee.com/marvinfore/open-richo-monitor/releases/download/v0.1.7/RichoMonitor_0.1.7_aarch64.dmg) |
-| Mac · Intel | [下载 Mac Intel 版](https://github.com/lavapapa/open-richo-monitor/releases/download/v0.1.7/RichoMonitor_0.1.7_x64.dmg) | [Gitee 下载](https://gitee.com/marvinfore/open-richo-monitor/releases/download/v0.1.7/RichoMonitor_0.1.7_x64.dmg) |
-| Windows · 64 位 | [下载 Windows 版](https://github.com/lavapapa/open-richo-monitor/releases/download/v0.1.7/RichoMonitor_0.1.7_x64-setup.exe) | [Gitee 下载](https://gitee.com/marvinfore/open-richo-monitor/releases/download/v0.1.7/RichoMonitor_0.1.7_x64-setup.exe) |
+| Mac · Apple Silicon（M1、M2、M3、M4 等） | [下载 Mac Apple Silicon 版](https://github.com/lavapapa/open-ricoh-monitor/releases/download/v0.1.7/RichoMonitor_0.1.7_aarch64.dmg) | [Gitee 下载](https://gitee.com/marvinfore/open-richo-monitor/releases/download/v0.1.7/RichoMonitor_0.1.7_aarch64.dmg) |
+| Mac · Intel | [下载 Mac Intel 版](https://github.com/lavapapa/open-ricoh-monitor/releases/download/v0.1.7/RichoMonitor_0.1.7_x64.dmg) | [Gitee 下载](https://gitee.com/marvinfore/open-richo-monitor/releases/download/v0.1.7/RichoMonitor_0.1.7_x64.dmg) |
+| Windows · 64 位 | [下载 Windows 版](https://github.com/lavapapa/open-ricoh-monitor/releases/download/v0.1.7/RichoMonitor_0.1.7_x64-setup.exe) | [Gitee 下载](https://gitee.com/marvinfore/open-richo-monitor/releases/download/v0.1.7/RichoMonitor_0.1.7_x64-setup.exe) |
 <!-- downloads:end -->
 
 - **Mac 用户不知道下载哪个版本？** 打开“关于本机”：Apple M 系列选 Apple Silicon，Intel 处理器选 Intel。
@@ -83,9 +83,9 @@
 | **双源更新** | GitHub 与 Gitee 提供更新来源 |
 
 <details>
-<summary>查看真实运行界面</summary>
+<summary>查看桌面监控界面</summary>
 
-![RichoMonitor 正在监控的真实 Mac 界面](docs/images/monitoring.png)
+![RicohMonitor 桌面监控界面](docs/images/monitoring.png)
 
 </details>
 
@@ -143,11 +143,11 @@ Mac dev 使用独立的调试版应用标识。平台集成场景见[测试说�
 
 ## 五、支持
 
-如果 RichoMonitor 帮你买到了心仪的相机，欢迎支持后续维护。
+如果 RicohMonitor 帮你买到了心仪的相机，欢迎支持后续维护。
 
 - **[☕ 打赏作者](https://afdian.com/a/lavapapa)**：通过爱发电支持开发，金额由你决定。
-- **[⭐ 给项目一个 Star](https://github.com/lavapapa/open-richo-monitor)**：让更多 GR 用户发现它。
-- **[提出问题或建议](https://github.com/lavapapa/open-richo-monitor/issues)**：提供系统、操作步骤和可见现象，截图前遮盖账号与二维码。
+- **[⭐ 给项目一个 Star](https://github.com/lavapapa/open-ricoh-monitor)**：让更多 GR 用户发现它。
+- **[提出问题或建议](https://github.com/lavapapa/open-ricoh-monitor/issues)**：提供系统、操作步骤和可见现象，截图前遮盖账号与二维码。
 
 应用免费使用，打赏按个人意愿参与。监控配置、通知凭据与运行记录保存在本机。
 

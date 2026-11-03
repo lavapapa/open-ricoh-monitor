@@ -172,7 +172,7 @@ pub mod windows {
         }
         unsafe {
             let session = WinHttpOpen(
-                w!("RichoMonitor proxy resolver"),
+                w!("RicohMonitor proxy resolver"),
                 WINHTTP_ACCESS_TYPE_NO_PROXY,
                 PCWSTR::null(),
                 PCWSTR::null(),

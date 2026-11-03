@@ -31,7 +31,7 @@
   </div>
   <div class="service"><span>统计服务</span><a href="https://posthog.com/" target="_blank" rel="noopener noreferrer" on:click={openService}>PostHog <span aria-hidden="true">↗</span></a></div>
   {/if}
-  {#if showChoice}<label class="choice"><input type="checkbox" aria-label="分享使用统计（可选）" checked={enabled} disabled={busy} on:change={(event) => { event.currentTarget.checked = enabled; onChange(!enabled); }} /><span>同意向 {#if compact}<a href="https://posthog.com/" target="_blank" rel="noopener noreferrer" on:click={openService}>PostHog</a>{:else}PostHog{/if} 分享使用统计，帮助改进 RichoMonitor。</span></label>{/if}
+  {#if showChoice}<label class="choice"><input type="checkbox" aria-label="分享使用统计（可选）" checked={enabled} disabled={busy} on:change={(event) => { event.currentTarget.checked = enabled; onChange(!enabled); }} /><span>同意向 {#if compact}<a href="https://posthog.com/" target="_blank" rel="noopener noreferrer" on:click={openService}>PostHog</a>{:else}PostHog{/if} 分享使用统计，帮助改进 RicohMonitor。</span></label>{/if}
   {#if linkError}<p role="alert">{linkError}</p>{/if}
 </section>
 

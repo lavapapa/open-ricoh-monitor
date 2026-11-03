@@ -935,8 +935,8 @@ impl PlatformSnapshot {
             },
             notification_settings_available: cfg!(target_os = "windows"),
             notification_permission_error: permission.err(),
-            project_url: Some("https://github.com/lavapapa/open-richo-monitor".into()),
-            tutorial_url: Some("https://github.com/lavapapa/open-richo-monitor#一桌面使用".into()),
+            project_url: Some("https://github.com/lavapapa/open-ricoh-monitor".into()),
+            tutorial_url: Some("https://github.com/lavapapa/open-ricoh-monitor#一桌面使用".into()),
             feedback_url: serde_json::from_str::<serde_json::Value>(include_str!("../../src/lib/support.json"))
                 .expect("support.json 格式有效")["feedbackUrl"].as_str().map(str::to_owned),
         }
@@ -1047,7 +1047,7 @@ fn login_start_contents(executable: &Path) -> String {
 #[cfg(target_os = "linux")]
 fn login_start_contents(executable: &Path) -> String {
     format!(
-        "[Desktop Entry]\nType=Application\nName=open-richo-monitor\nExec=\"{}\"\nX-GNOME-Autostart-enabled=true\n",
+        "[Desktop Entry]\nType=Application\nName=RicohMonitor\nExec=\"{}\"\nX-GNOME-Autostart-enabled=true\n",
         desktop_exec_escape(&executable.to_string_lossy())
     )
 }

@@ -25,7 +25,7 @@ test('更新清单要求 Apple Silicon 与 Windows 构件和签名齐全，使�
     assert.deepEqual(Object.keys(manifest.platforms), ['darwin-aarch64', 'windows-x86_64']);
     for (const entry of Object.values(manifest.platforms)) {
       assert.equal(entry.signature, 'fixture-signature');
-      assert.ok(entry.url.startsWith(`https://github.com/lavapapa/open-richo-monitor/releases/download/v${config.version}/`));
+      assert.ok(entry.url.startsWith(`https://github.com/lavapapa/open-ricoh-monitor/releases/download/v${config.version}/`));
     }
     const mirrorBase = `https://gitee.com/marvinfore/open-richo-monitor/releases/download/v${config.version}`;
     execFileSync(process.execPath, [script, directory, '', mirrorBase]);

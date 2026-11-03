@@ -34,7 +34,7 @@
 <dialog bind:this={dialog} class:feedback={step === "feedback"} aria-labelledby="support-title" on:close={onClose}>
   {#if step === "rating"}
     <h2 id="support-title">恭喜买到心仪的相机！</h2>
-    <p>RichoMonitor 用起来怎么样？</p>
+    <p>RicohMonitor 用起来怎么样？</p>
     <div class="choices"><button on:click={() => step = "positive"}>好评</button><button on:click={() => step = "feedback"}>有一些意见</button></div>
   {:else if step === "positive"}
     <h2 id="support-title">谢谢你的肯定</h2>
@@ -43,7 +43,7 @@
     <h2 id="support-title">告诉我你的意见</h2>
     <div class="form">
       {#if !loaded}<div class="loading" role="status"><LoaderCircle size={20} aria-hidden="true" />正在加载反馈表单…</div>{/if}
-      <iframe src={embedLink} title="RichoMonitor 反馈表单" on:load={() => loaded = true}></iframe>
+      <iframe src={embedLink} title="RicohMonitor 反馈表单" on:load={() => loaded = true}></iframe>
     </div>
   {/if}
   {#if error}<p role="alert">{error}</p>{/if}

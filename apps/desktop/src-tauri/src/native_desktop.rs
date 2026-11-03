@@ -6,14 +6,14 @@ use tauri::{
 pub fn install(app: &tauri::App) -> tauri::Result<()> {
     let app_menu = Submenu::with_items(
         app,
-        "RichoMonitor",
+        "RicohMonitor",
         true,
         &[
             &PredefinedMenuItem::about(
                 app,
-                Some("关于 RichoMonitor"),
+                Some("关于 RicohMonitor"),
                 Some(AboutMetadata {
-                    name: Some("RichoMonitor".into()),
+                    name: Some("RicohMonitor".into()),
                     version: Some(app.package_info().version.to_string()),
                     icon: app.default_window_icon().cloned(),
                     ..Default::default()
@@ -31,11 +31,11 @@ pub fn install(app: &tauri::App) -> tauri::Result<()> {
             &PredefinedMenuItem::separator(app)?,
             &PredefinedMenuItem::services(app, Some("服务"))?,
             &PredefinedMenuItem::separator(app)?,
-            &PredefinedMenuItem::hide(app, Some("隐藏 RichoMonitor"))?,
+            &PredefinedMenuItem::hide(app, Some("隐藏 RicohMonitor"))?,
             &PredefinedMenuItem::hide_others(app, Some("隐藏其他"))?,
             &PredefinedMenuItem::show_all(app, Some("显示全部"))?,
             &PredefinedMenuItem::separator(app)?,
-            &PredefinedMenuItem::quit(app, Some("退出 RichoMonitor"))?,
+            &PredefinedMenuItem::quit(app, Some("退出 RicohMonitor"))?,
         ],
     )?;
     let edit_menu = Submenu::with_items(
@@ -130,7 +130,7 @@ pub fn install(app: &tauri::App) -> tauri::Result<()> {
         } else if action == "project" {
             tauri::async_runtime::spawn(async {
                 let _ = super::desktop_notifications::open_external_url(
-                    "https://github.com/lavapapa/open-richo-monitor".into(),
+                    "https://github.com/lavapapa/open-ricoh-monitor".into(),
                 )
                 .await;
             });

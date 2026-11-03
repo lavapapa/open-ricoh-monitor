@@ -279,7 +279,7 @@ mod tests {
             }
         });
         let directory =
-            std::env::temp_dir().join(format!("richomonitor-usage-capture-{}", std::process::id()));
+            std::env::temp_dir().join(format!("ricohmonitor-usage-capture-{}", std::process::id()));
         std::fs::create_dir_all(&directory).unwrap();
         let mut db = Storage::open(directory.join("monitor.sqlite3")).unwrap();
         db.save_notification_channel(

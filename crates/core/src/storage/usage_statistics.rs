@@ -91,7 +91,7 @@ mod tests {
     #[test]
     fn usage_consent_is_optional_persistent_and_resettable() {
         let path =
-            std::env::temp_dir().join(format!("richomonitor-usage-{}.sqlite3", std::process::id()));
+            std::env::temp_dir().join(format!("ricohmonitor-usage-{}.sqlite3", std::process::id()));
         let mut db = Storage::open(&path).unwrap();
         assert_eq!(db.usage_statistics_identity().unwrap(), None);
         db.set_usage_statistics_enabled(true).unwrap();

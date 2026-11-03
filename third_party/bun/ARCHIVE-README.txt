@@ -1,6 +1,6 @@
 Bun 通知运行时对应源码
 
-此归档与 open-richo-monitor 的试用安装包从同一网盘分享提供。
+此归档与 open-ricoh-monitor 的试用安装包从同一网盘分享提供。
 其中 Bun 本身采用 MIT，JavaScriptCore/WebKit 采用 LGPL-2，TinyCC
 采用 LGPL-2.1；各组件源码保留其许可证与版权声明。
 

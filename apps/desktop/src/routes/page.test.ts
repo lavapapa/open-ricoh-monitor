@@ -823,7 +823,7 @@ describe("桌面主流程", () => {
     render(Page);
     await screen.findByRole("heading", { name: "已停止" });
     expect(screen.getByRole("img", { name: "RM" }).getAttribute("src")).toBe("/brand/rm-wordmark.svg");
-    expect(screen.getByText("RichoMonitor")).toBeTruthy();
+    expect(screen.getByText("RicohMonitor")).toBeTruthy();
     expect(screen.getByRole("navigation", { name: "主导航" }).querySelectorAll("button")).toHaveLength(6);
     expect(pageSource).toMatch(/\.message-table \{[^}]*min-width: 560px/);
     expect(pageSource).toMatch(/\.shell \{[^}]*grid-template-columns: 210px/);
@@ -1281,7 +1281,7 @@ describe("桌面主流程", () => {
     await screen.findByRole("button", { name: "开始监控" });
     await fireEvent.click(screen.getByRole("button", { name: "其他设置" }));
     expect(screen.getByText("版本 0.1.0")).toBeTruthy();
-    expect(screen.getAllByText("RichoMonitor").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("RicohMonitor").length).toBeGreaterThan(0);
   });
 
   it("成功检查后设置页显示暂未发现更新", async () => {
@@ -1385,7 +1385,7 @@ describe("桌面主流程", () => {
     await fireEvent.click(screen.getByRole("button", { name: "其他设置" }));
     await fireEvent.click(screen.getByRole("button", { name: "反馈" }));
     await screen.findByRole("dialog", { name: "告诉我你的意见" });
-    expect(screen.getByTitle("RichoMonitor 反馈表单")).toBeTruthy();
+    expect(screen.getByTitle("RicohMonitor 反馈表单")).toBeTruthy();
     bridge.purchaseHandler!();
     expect(screen.queryByRole("dialog", { name: "恭喜买到心仪的相机！" })).toBeNull();
     await fireEvent.click(screen.getByRole("button", { name: "关闭" }));

@@ -92,7 +92,7 @@ jobs:
           cargo clean --profile dev --manifest-path crates/core/Cargo.toml
           df -h .
           npm run package:macos:dmg --prefix apps/desktop
-          node scripts/test-notification-runtime.mjs target/release/bundle/macos/RichoMonitor.app/Contents/MacOS/notification-runtime target/release/bundle/macos/RichoMonitor.app/Contents/Resources/notification-runtime.mjs
+          node scripts/test-notification-runtime.mjs target/release/bundle/macos/RicohMonitor.app/Contents/MacOS/notification-runtime target/release/bundle/macos/RicohMonitor.app/Contents/Resources/notification-runtime.mjs
       - name: Windows tests and package
         if: runner.os == 'Windows'
         shell: pwsh
@@ -137,4 +137,4 @@ jobs:
           node scripts/create-update-manifest.mjs dist/release "docs/releases/v$VERSION.md"
           node scripts/verify-release.mjs dist/release
           mapfile -t ASSETS < <(find dist/release -maxdepth 1 -type f)
-          gh release create "v$VERSION" "${ASSETS[@]}" --verify-tag --draft --title "RichoMonitor $VERSION" --notes-file "docs/releases/v$VERSION.md"
+          gh release create "v$VERSION" "${ASSETS[@]}" --verify-tag --draft --title "RicohMonitor $VERSION" --notes-file "docs/releases/v$VERSION.md"

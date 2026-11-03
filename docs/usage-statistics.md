@@ -24,7 +24,7 @@
 
 ## 后台配置
 
-统计面板：[RichoMonitor · 使用统计](https://us.posthog.com/project/663820/dashboard/2208402)。使用作者的 PostHog 账号登录查看，面板保持私有。
+统计面板：[RicohMonitor · 使用统计](https://us.posthog.com/project/663820/dashboard/2208402)。使用作者的 PostHog 账号登录查看，面板保持私有。
 
 `apps/desktop/usage-statistics.json` 保存接收端点与公开项目写入 Token。该 Token 允许事件写入，管理 API 密钥留在服务后台。版本由桌面包配置读取；dev 数据标记为 `development`，发行数据标记为 `production`。
 

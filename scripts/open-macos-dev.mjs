@@ -8,7 +8,7 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const target = path.join(root, 'apps/desktop/src-tauri/target/debug');
 const binary = path.join(target, 'ricoh-monitor-desktop');
 if (!existsSync(binary)) throw new Error('请先编译桌面 dev 程序。');
-const app = path.join(target, 'RichoMonitorDev.app');
+const app = path.join(target, 'RicohMonitorDev.app');
 mkdirSync(path.join(app, 'Contents/MacOS'), { recursive: true });
 mkdirSync(path.join(app, 'Contents/Resources'), { recursive: true });
 // UserNotifications 需要真实 App bundle；调试壳仍运行 debug 程序和 Vite 页面。
@@ -18,7 +18,7 @@ writeFileSync(path.join(app, 'Contents/Info.plist'), `<?xml version="1.0" encodi
 <plist version="1.0"><dict>
 <key>CFBundleExecutable</key><string>ricoh-monitor-desktop</string>
 <key>CFBundleIdentifier</key><string>dev.ricohmonitor.debug</string>
-<key>CFBundleName</key><string>RichoMonitor Dev</string>
+<key>CFBundleName</key><string>RicohMonitor Dev</string>
 <key>CFBundlePackageType</key><string>APPL</string>
 <key>NSHighResolutionCapable</key><true/>
 </dict></plist>`);

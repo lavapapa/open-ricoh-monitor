@@ -257,7 +257,7 @@ describe("三步首次设置", () => {
 
   it("步骤标题、返回操作与完成文案对应当前步骤", async () => {
     mount({ setupCompleted: true, products: [product("65", "官翻品 GR IIIx", true)] });
-    for (const text of ["open-richo-monitor", "1 / 3", "退出引导", "01 · 监控产品", "官翻 GR III / IV", "至少选择一款产品"]) {
+    for (const text of ["open-ricoh-monitor", "1 / 3", "退出引导", "01 · 监控产品", "官翻 GR III / IV", "至少选择一款产品"]) {
       expect(screen.queryByText(text)).toBeNull();
     }
     expect(screen.queryByText(/已选.*款产品|其他官方产品|勾选你关注/)).toBeNull();

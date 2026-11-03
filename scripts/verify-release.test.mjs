@@ -9,7 +9,7 @@ const root = new URL('../', import.meta.url);
 const config = JSON.parse(readFileSync(new URL('apps/desktop/src-tauri/tauri.conf.json', root)));
 test('版本预检核对全部桌面版本来源', () => {
   assert.equal(verifyVersions(root), config.version);
-  const fixture = mkdtempSync(path.join(tmpdir(), 'richo-versions-'));
+  const fixture = mkdtempSync(path.join(tmpdir(), 'ricoh-versions-'));
   try {
     const files = ['apps/desktop/src-tauri/tauri.conf.json', 'apps/desktop/package.json', 'apps/desktop/package-lock.json', 'apps/desktop/src-tauri/Cargo.toml', 'apps/desktop/src-tauri/Cargo.lock'];
     for (const file of files) {
@@ -23,8 +23,8 @@ test('版本预检核对全部桌面版本来源', () => {
 });
 
 test('正式发行必须有三平台安装包、更新包、签名及一致的清单', () => {
-  const directory = mkdtempSync(path.join(tmpdir(), 'richo-assets-'));
-  const base = `https://github.com/lavapapa/open-richo-monitor/releases/download/v${config.version}`;
+  const directory = mkdtempSync(path.join(tmpdir(), 'ricoh-assets-'));
+  const base = `https://github.com/lavapapa/open-ricoh-monitor/releases/download/v${config.version}`;
   try {
     const manifest = { version: config.version, platforms: {} };
     const platforms = { 'darwin-aarch64': 'aarch64.app.tar.gz', 'darwin-x86_64': 'x64.app.tar.gz', 'windows-x86_64': 'x64-setup.exe' };

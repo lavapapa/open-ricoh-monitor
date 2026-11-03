@@ -19,10 +19,13 @@ export async function verifySource(source, fetcher = fetch) {
     : 'releases/download/latest/latest.json';
   const manifest = await (await request(`${source}/${manifestPath}`, 'GET')).json();
   assert.match(manifest.version, /^\d+\.\d+\.\d+$/, '公开清单缺少正式版本号');
-  const config = { productName: 'RichoMonitor', version: manifest.version };
+  const archive = new URL(manifest.platforms['darwin-aarch64'].url).pathname.split('/').at(-1);
+  const suffix = `_${manifest.version}_aarch64.app.tar.gz`;
+  assert.ok(archive.endsWith(suffix) && archive.length > suffix.length, 'Apple Silicon 更新文件名无效');
+  const config = { productName: archive.slice(0, -suffix.length), version: manifest.version };
   const base = `${source}/releases/download/v${manifest.version}`;
   const files = Object.values(verifyManifest(manifest, config, base));
-  files.push(`RichoMonitor_${manifest.version}_aarch64.dmg`, `RichoMonitor_${manifest.version}_x64.dmg`);
+  files.push(`${config.productName}_${manifest.version}_aarch64.dmg`, `${config.productName}_${manifest.version}_x64.dmg`);
   await Promise.all(files.map(async file => {
     const url = `${base}/${file}`;
     const response = await request(url, 'HEAD');
@@ -31,7 +34,7 @@ export async function verifySource(source, fetcher = fetch) {
   return { source, version: manifest.version, files: files.length };
 }
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  const sources = ['https://github.com/lavapapa/open-richo-monitor'];
+  const sources = ['https://github.com/lavapapa/open-ricoh-monitor'];
   if (!process.argv.includes('--github-only')) sources.push('https://gitee.com/marvinfore/open-richo-monitor');
   const results = await Promise.allSettled(sources.map(source => verifySource(source)));
   const lines = results.map((result, index) => {

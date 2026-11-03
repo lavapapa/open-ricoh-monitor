@@ -34,7 +34,7 @@ export function verifyVersions(directory = root) {
   })) assert.equal(actual, version, `${name} 版本未同步，请与 tauri.conf.json 保持一致`);
   return version;
 }
-export function verifyRelease(directory, config, base = `https://github.com/lavapapa/open-richo-monitor/releases/download/v${config.version}`) {
+export function verifyRelease(directory, config, base = `https://github.com/lavapapa/open-ricoh-monitor/releases/download/v${config.version}`) {
   const manifest = JSON.parse(readFileSync(path.join(directory, 'latest.json')));
   const platforms = verifyManifest(manifest, config, base);
   const files = ['latest.json', 'INSTALL.txt', ...Object.values(platforms).flatMap(file => [file, `${file}.sig`]), ...['aarch64', 'x64'].map(arch => `${config.productName}_${config.version}_${arch}.dmg`)];
