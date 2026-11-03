@@ -30,7 +30,7 @@
 
 手动运行流程时可选择单个平台重建工件；该模式不创建 Release。全平台手动运行须选择与应用版本匹配的标签，可执行 `gh workflow run release.yml --ref v版本 -f platform=all`；分支调试选择单个平台。macOS 测试结束后清理 debug 编译缓存，为正式构建和 DMG 临时卷保留磁盘空间。
 
-Gitee 的公开镜像为 `marvinfore/open-richo-monitor`。同步 GitHub 的主分支与版本标签，在同名发行版上传完整安装包、更新构件和签名。将相同构件放入独立的镜像清单目录，运行 `node scripts/create-update-manifest.mjs 目录 "" https://gitee.com/marvinfore/open-richo-monitor/releases/download/v版本`，生成指向 Gitee 附件的 `latest.json`；全部附件齐全后一起创建发行版。公开后用未登录请求检查 `releases/download/latest/latest.json` 及其中的构件地址。源码同步与发行版附件分别处理；浏览器登录或发布凭据留在发布者一侧，App 无需 Gitee 账号或访问令牌。
+Gitee 的公开镜像为 `marvinfore/open-ricoh-monitor`。同步 GitHub 的主分支与版本标签，在同名发行版上传完整安装包、更新构件和签名。将相同构件放入独立的镜像清单目录，运行 `node scripts/create-update-manifest.mjs 目录 "" https://gitee.com/marvinfore/open-ricoh-monitor/releases/download/v版本`，生成指向 Gitee 附件的 `latest.json`；全部附件齐全后一起创建发行版。公开后用未登录请求检查 `releases/download/latest/latest.json` 及其中的构件地址。源码同步与发行版附件分别处理；浏览器登录或发布凭据留在发布者一侧，App 无需 Gitee 账号或访问令牌。
 
 Gitee 发行页面列明普通仓库单附件 100M、总附件 1G 的容量限制。每次发布核对实际额度与构件大小，按需清理过时镜像附件；GitHub 保留历史发行版。镜像滞后、清单损坏或单一来源不可用时，另一个来源独立参与检查。任一来源完成有效检查，即可完成本次检查；未发现新版时显示“暂未发现更新。”，其他来源的失败记入日志。两个来源都失败时显示来源名称与错误原因，并保留已有更新对象供重试。
 

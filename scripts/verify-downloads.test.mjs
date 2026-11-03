@@ -28,7 +28,7 @@ test('公开检查保留网络失败，错误中包含出问题的下载地址',
   await assert.rejects(verifySource(source, async () => new Response('not found', { status: 404 })), /404.*latest.json/);
 });
 test('Gitee 使用独立的 latest 标签清单地址', async () => {
-  const mirror = 'https://gitee.com/marvinfore/open-richo-monitor';
+  const mirror = 'https://gitee.com/marvinfore/open-ricoh-monitor';
   const content = JSON.parse(JSON.stringify(manifest()).replaceAll(source, mirror));
   const requests = [];
   await verifySource(mirror, async (url, options) => {

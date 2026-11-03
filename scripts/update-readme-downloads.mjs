@@ -4,7 +4,7 @@ const config = JSON.parse(readFileSync(new URL('../apps/desktop/src-tauri/tauri.
 
 export function downloads(version, productName = config.productName) {
   const base = `https://github.com/lavapapa/open-ricoh-monitor/releases/download/v${version}/${productName}_${version}`;
-  const mirror = `https://gitee.com/marvinfore/open-richo-monitor/releases/download/v${version}/${productName}_${version}`;
+  const mirror = `https://gitee.com/marvinfore/open-ricoh-monitor/releases/download/v${version}/${productName}_${version}`;
   return `<!-- downloads:start -->
 | 你的电脑 | 点击下载 | 国内镜像 |
 | --- | --- | --- |

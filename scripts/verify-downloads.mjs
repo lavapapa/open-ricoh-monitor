@@ -35,7 +35,7 @@ export async function verifySource(source, fetcher = fetch) {
 }
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const sources = ['https://github.com/lavapapa/open-ricoh-monitor'];
-  if (!process.argv.includes('--github-only')) sources.push('https://gitee.com/marvinfore/open-richo-monitor');
+  if (!process.argv.includes('--github-only')) sources.push('https://gitee.com/marvinfore/open-ricoh-monitor');
   const results = await Promise.allSettled(sources.map(source => verifySource(source)));
   const lines = results.map((result, index) => {
     if (result.status === 'fulfilled') return `通过：${result.value.source} · ${result.value.version} · ${result.value.files} 个下载地址`;
